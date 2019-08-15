@@ -11,6 +11,8 @@ public class User {
     private String userSingle;
     private String userNum;
     private String userPassword;
+    int a;
+
 
     //以上为用户序号、用户名、用户性别、年级、部门、技术、是否单身、学号（账号）、密码
 
