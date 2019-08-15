@@ -32,3 +32,7 @@ hs_err_pid*
 *.iml
 out
 gen
+src/com/cslg/lrp/controller/
+src/com/cslg/lrp/dao/
+src/com/cslg/lrp/filter/
+src/com/cslg/lrp/test/
