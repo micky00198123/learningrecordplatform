@@ -10,8 +10,8 @@ public class ServiceTools {
 
     /**
      * MD5加密
-     * @param str
-     * @return
+     * @param str 待加密字符串
+     * @return 加密后字符串
      */
     public static String getMd5String(String str) {
         try {
@@ -28,8 +28,8 @@ public class ServiceTools {
 
     /**
      * 字节数组转十六进制编码字符串
-     * @param byteArray
-     * @return
+     * @param byteArray 字节数组
+     * @return 字符串
      */
     private static String byteArrayToHex(byte[] byteArray) {
         char[] hexDigits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',

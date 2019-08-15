@@ -9,29 +9,30 @@ import com.cslg.lrp.util.ServiceTools;
  */
 public class AccountServiceImpl implements AccountService {
 
-    /**
-     * 检查是否登录成功
-     *
-     * @param userName
-     * @param password
-     * @return
-     */
     @Override
     public boolean cheekAccount(String userName, String password) {
+        // 检查非空
+        if(userName == null || password == null) {
+            return false;
+        }
+        if(userName.equals("") || password.equals("")) {
+            return false;
+        }
 
         return false;
     }
 
-    /**
-     * 保存注册的用户信息
-     *
-     * @param user
-     * @return
-     */
     @Override
     public boolean saveAccount(User user) {
+        // 检查非空
+        if(user == null) {
+            return false;
+        }
         // 将用户密码进行MD5加密
         String mD5Password = ServiceTools.getMd5String(user.getUserPassword);
+        if(mD5Password == null) {
+            return false;
+        }
         user.setUserPassword(mD5Password);
 
         return false;
