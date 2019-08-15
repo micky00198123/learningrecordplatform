@@ -1,5 +1,7 @@
 package com.cslg.lrp.service;
 
+import com.cslg.lrp.domain.User;
+
 /**
  * 登录注册业务接口
  * @author MLP

@@ -1,5 +1,6 @@
 package com.cslg.lrp.service.impl;
 
+import com.cslg.lrp.domain.User;
 import com.cslg.lrp.service.AccountService;
 import com.cslg.lrp.util.ServiceTools;
 
@@ -29,7 +30,7 @@ public class AccountServiceImpl implements AccountService {
             return false;
         }
         // 将用户密码进行MD5加密
-        String mD5Password = ServiceTools.getMd5String(user.getUserPassword);
+        String mD5Password = ServiceTools.getMd5String(user.getUserPassword());
         if(mD5Password == null) {
             return false;
         }
