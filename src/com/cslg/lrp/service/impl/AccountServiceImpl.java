@@ -1,6 +1,7 @@
 package com.cslg.lrp.service.impl;
 
 import com.cslg.lrp.service.AccountService;
+import com.cslg.lrp.util.ServiceTools;
 
 /**
  * 登录注册业务实现类
@@ -17,6 +18,7 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     public boolean cheekAccount(String userName, String password) {
+
         return false;
     }
 
@@ -28,6 +30,10 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     public boolean saveAccount(User user) {
+        // 将用户密码进行MD5加密
+        String mD5Password = ServiceTools.getMd5String(user.getUserPassword);
+        user.setUserPassword(mD5Password);
+
         return false;
     }
 }
