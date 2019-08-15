@@ -1,4 +1,4 @@
-package com.sclg.lrp.domain;
+package com.cslg.lrp.domain;
 
 public class User {
 
@@ -9,7 +9,7 @@ public class User {
     private String userDept;
     private String userTech;
     private String userSingle;
-    private int userNum;
+    private String userNum;
     private String userPassword;
 
     //以上为用户序号、用户名、用户性别、年级、部门、技术、是否单身、学号（账号）、密码
@@ -70,11 +70,11 @@ public class User {
         this.userSingle = userSingle;
     }
 
-    public int getUserNum() {
+    public String getUserNum() {
         return userNum;
     }
 
-    public void setUserNum(int userNum) {
+    public void setUserNum(String userNum) {
         this.userNum = userNum;
     }
 
