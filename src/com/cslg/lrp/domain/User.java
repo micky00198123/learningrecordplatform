@@ -2,7 +2,7 @@ package com.cslg.lrp.domain;
 
 public class User {
 
-    private int userID;
+    private int userId;
     private String userName;
     private String userSex;
     private int userGrade;
@@ -14,12 +14,12 @@ public class User {
 
     //以上为用户序号、用户名、用户性别、年级、部门、技术、是否单身、学号（账号）、密码
 
-    public int getUserID() {
-        return userID;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUserName() {
