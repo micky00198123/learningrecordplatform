@@ -1,0 +1,15 @@
+public interface NewsDao {
+	//查询全部信息
+		public void getList();
+		//查询重名
+		boolean getNewsTitle(String id);
+		//查询登陆
+		public User getOldsTitle(String id,String password);
+		//增
+		boolean add(User users);
+		//删
+		boolean delete(User users);
+		//改
+		boolean update(User users);
+
+}
