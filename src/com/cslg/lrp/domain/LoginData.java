@@ -14,8 +14,8 @@ public class LoginData {
     public LoginData() {
     }
 
-    public LoginData(String userName, String password) {
-        this.userId = userName;
+    public LoginData(String userId, String password) {
+        this.userId = userId;
         this.password = password;
     }
 
