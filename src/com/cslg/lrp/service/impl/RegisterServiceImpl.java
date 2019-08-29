@@ -1,16 +1,19 @@
 package com.cslg.lrp.service.impl;
 
-import com.cslg.lrp.dao.impl.NewsDaoImpl;
+import com.cslg.lrp.Dao.NewsDaoImpl;
 import com.cslg.lrp.domain.User;
 import com.cslg.lrp.service.RegisterService;
 
+/**
+ * @author MLP
+ */
 public class RegisterServiceImpl implements RegisterService {
 
-    NewsDaoImpl nd = new NewsDaoImpl();
+    private NewsDaoImpl nd = new NewsDaoImpl();
 
     @Override
     public boolean checkDuplicateNames(String id) {
-        if(id == null || id.equals("")) {
+        if(id == null || "".equals(id)) {
             return false;
         }
         return nd.getNewsTitle(id);

@@ -2,6 +2,9 @@ package com.cslg.lrp.service;
 
 import com.cslg.lrp.domain.User;
 
+/**
+ * @author MLP
+ */
 public interface RegisterService {
 
     /**

@@ -1,13 +1,16 @@
 package com.cslg.lrp.service.impl;
 
-import com.cslg.lrp.dao.impl.NewsDaoImpl;
+import com.cslg.lrp.Dao.NewsDaoImpl;
 import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.service.LoginService;
 import com.cslg.lrp.util.ServiceTools;
 
+/**
+ * @author MLP
+ */
 public class LoginServiceImpl implements LoginService {
 
-    NewsDaoImpl nd = new NewsDaoImpl();
+    private NewsDaoImpl nd = new NewsDaoImpl();
 
     @Override
     public boolean loginAccount(LoginData ld) {
