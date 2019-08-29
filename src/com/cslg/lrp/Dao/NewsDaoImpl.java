@@ -44,22 +44,18 @@ public class NewsDaoImpl implements NewsDao {
             JDBCUtil.release(con, ps, rs);
         }
     }
-
-
-
     @Override
     public boolean getOldsTitle(LoginData user1) {
         String id=user1.getUserId();
         String password=user1.getPassword();
-        //CipherProcessing processing = new CipherProcessing();
+        CipherProcessing processing = new CipherProcessing();
         try {
-        //    String newpassword = processing.EncoderByMd5(password);
+            String newpassword = processing.EncoderByMd5(password);
             con = JDBCUtil.getConnection();
             String sql = "select * from users where `id` =? and `password` =?";
             ps = con.prepareStatement(sql);
             ps.setString(1,id);
-            ps.setString(2,password);
-        //    ps.setString(2,newpassword);
+            ps.setString(2,newpassword);
             rs = ps.executeQuery();
             if(rs.next()) {
                 System.out.println("登录成功");
@@ -68,21 +64,13 @@ public class NewsDaoImpl implements NewsDao {
                 System.out.println("登录失败");
                 return false;
             }
-        }
-        /*
-        catch (NoSuchAlgorithmException e) {
-
+        }catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
             return false;
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
             return false;
-
-
-        }
-        */
-        catch (SQLException e) {
-
+        } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }finally {

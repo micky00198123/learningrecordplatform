@@ -1,6 +1,5 @@
 package com.cslg.lrp.Dao;
 
-
 import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.domain.User;
 
@@ -17,7 +16,7 @@ public interface NewsDao {
      * @paramuserName 用户名
      * @return 该用户名是否存在
      */
-    public boolean getOldsTitle(LoginData user1);
+    public boolean getOldsTitle(LoginData user);
     /**
      * 登录查询
      *@paramuserName 用户名
