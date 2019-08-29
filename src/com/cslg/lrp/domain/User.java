@@ -1,4 +1,4 @@
-package src.com.cslg.lrp.domain;
+package com.cslg.lrp.domain;
 
 public class User {
 
