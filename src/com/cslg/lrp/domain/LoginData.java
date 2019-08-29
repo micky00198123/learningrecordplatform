@@ -1,4 +1,4 @@
-package com.cslg.lrp.domain;
+package src.com.cslg.lrp.domain;
 
 /**
  * 登录模型,封装了学号和密码
