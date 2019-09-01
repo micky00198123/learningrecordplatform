@@ -10,6 +10,15 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../sunmiscbase64decoder.zip!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../sunmiscbase64decoder/sun.misc.BASE64Decoder.jar!/" />
         </CLASSES>
         <JAVADOC />

@@ -1,4 +1,4 @@
-package com.cslg.lrp.Dao;
+package com.cslg.lrp.util;
 import Decoder.CEStreamExhausted;
 
 import java.io.ByteArrayInputStream;

@@ -1,45 +1,43 @@
-package com.cslg.lrp.Dao;
+package com.cslg.lrp.dao;
 
 import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.domain.User;
 
 public interface NewsDao {
-    public void getList();
     /**
      * 查询列表
      * @return 列表
      * emmm
      */
-    boolean getNewsTitle(String id);
+    public void getList();
     /**
      * 查看重名
-     * @paramuserName 用户名
+     * @param id
      * @return 该用户名是否存在
+     */
+    boolean getNewsTitle(String id);
+    /**
+     * 登录查询
+     *@param user
+     * @return 是否登录成功
      */
     public boolean getOldsTitle(LoginData user);
     /**
-     * 登录查询
-     *@paramuserName 用户名
-     *  @parampassword 密码
-     * @return 是否登录成功
-     */
-    boolean add(User users);
-    /**
      * 注册
-     *  @parampuser内容
+     *  @param user
      * @return 是否添加成功
      */
-    boolean delete(User users);
+    boolean add(User user);
     /**
-     * 修改
-     * @paramuser内容
+     * 删除
+     * @param user
      * @return 是否删除成功
      */
-    boolean update(User users);
+    boolean delete(User user);
     /**
      * 修改
-     * @param user内容
-     * @return 是否修改成功
+     * @param user
+     * @return 是否删除成功
      */
-
+    boolean update(User user);
 }

@@ -1,4 +1,4 @@
-package com.cslg.lrp.Dao;
+package com.cslg.lrp.util;
 
 
 import Decoder.CEFormatException;
@@ -28,14 +28,17 @@ public class BASE64Decoder extends CharacterDecoder {
     public BASE64Decoder() {
     }
 
+    @Override
     protected int bytesPerAtom() {
         return 4;
     }
 
+    @Override
     protected int bytesPerLine() {
         return 72;
     }
 
+    @Override
     protected void decodeAtom(PushbackInputStream inStream, OutputStream outStream, int rem) throws IOException {
         byte a = -1;
         byte b = -1;

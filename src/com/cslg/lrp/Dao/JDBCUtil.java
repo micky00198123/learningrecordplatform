@@ -1,4 +1,4 @@
-package com.cslg.lrp.Dao;
+package com.cslg.lrp.dao;
 
 import java.io.IOException;
 import java.io.InputStream;

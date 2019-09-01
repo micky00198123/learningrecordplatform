@@ -1,4 +1,4 @@
-package src.com.cslg.lrp.Dao.untitled.src.Dao;
+package com.cslg.lrp.util;
 
 
 import java.io.IOException;
@@ -10,14 +10,17 @@ public class BASE64Encoder extends CharacterEncoder {
     public BASE64Encoder() {
     }
 
+    @Override
     protected int bytesPerAtom() {
         return 3;
     }
 
+    @Override
     protected int bytesPerLine() {
         return 57;
     }
 
+    @Override
     protected void encodeAtom(OutputStream outStream, byte[] data, int offset, int len) throws IOException {
         byte a;
         if (len == 1) {

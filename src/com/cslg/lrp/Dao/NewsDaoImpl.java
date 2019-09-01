@@ -1,7 +1,8 @@
-package com.cslg.lrp.Dao;
+package com.cslg.lrp.dao;
 
 import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.domain.User;
+import com.cslg.lrp.util.CipherProcessing;
 
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
@@ -50,7 +51,7 @@ public class NewsDaoImpl implements NewsDao {
         String password=user1.getPassword();
         CipherProcessing processing = new CipherProcessing();
         try {
-            String newpassword = processing.EncoderByMd5(password);
+            String newpassword = processing.encoderByMd5(password);
             con = JDBCUtil.getConnection();
             String sql = "select * from users where `id` =? and `password` =?";
             ps = con.prepareStatement(sql);
