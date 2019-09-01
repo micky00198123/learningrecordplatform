@@ -82,18 +82,17 @@ public class NewsDaoImpl implements NewsDao {
     @Override
     public boolean add(User users) {
         con= JDBCUtil.getConnection();
-        String sql=" insert into user(userID,userName,userSex,userGrade,userDept,userTech,userSingle,userNum,userPassword) values(?,?,?,?,?,?,?,?,?) ";
+        String sql=" insert into user(userID,userName,userSex,userGrade,userDept,userTech,userSingle,userPassword) values(?,?,?,?,?,?,?,?,?) ";
         try {
             ps=con.prepareStatement(sql);
-            ps.setInt(1, users.getUserId());
+            ps.setString(1, users.getUserId());
             ps.setString(2, users.getUserName());
             ps.setString(3, users.getUserSex());
             ps.setInt(4,  users.getUserGrade());
             ps.setString(5, users.getUserDept());
             ps.setString(6, users.getUserTech());
             ps.setString(7, users.getUserSingle());
-            ps.setString(8, users.getUserNum());
-            ps.setString(9, users.getUserPassword());
+            ps.setString(8, users.getUserPassword());
             int ud=ps.executeUpdate();
             if(ud>0) {
                 return true;
