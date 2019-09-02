@@ -26,7 +26,7 @@ public class NewsDaoImpl implements NewsDao {
     public boolean getNewsTitle(String id) {
 
         con = JDBCUtil.getConnection();
-        String sql = " select*from user where username=? ";
+        String sql = " select*from user where userName=? ";
 
         try {
 
@@ -53,7 +53,7 @@ public class NewsDaoImpl implements NewsDao {
         try {
             String newpassword = processing.encoderByMd5(password);
             con = JDBCUtil.getConnection();
-            String sql = "select * from users where `id` =? and `password` =?";
+            String sql = "select * from user where `userId` =? and `userPassword` =?";
             ps = con.prepareStatement(sql);
             ps.setString(1,id);
             ps.setString(2,newpassword);

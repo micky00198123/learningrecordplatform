@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 
 public class JDBCUtil {
     private static String driver;
-    private static String url;
     private static String username;
     private static String password;
     private static final Logger logger = Logger.getLogger(String.valueOf(JDBCUtil.class));
@@ -23,7 +22,7 @@ public class JDBCUtil {
             e.printStackTrace();
         }
         driver = properties.getProperty("driver");
-        url = properties.getProperty("url");
+        String url = properties.getProperty("url");
         username = properties.getProperty("username");
         password = properties.getProperty("password");
 
