@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-public class NewsDaoImpl implements com.cslg.lrp.dao.NewsDao {
+public class NewsDaoImpl implements NewsDao {
 
     private static final Logger logger = Logger.getLogger(String.valueOf(NewsDaoImpl.class));
     Connection con = null;
@@ -25,8 +25,8 @@ public class NewsDaoImpl implements com.cslg.lrp.dao.NewsDao {
     @Override
     public boolean getNewsTitle(String id) {
 
-        con = com.cslg.lrp.dao.JDBCUtil.getConnection();
-        String sql = " select*from user where username=? ";
+        con = JDBCUtil.getConnection();
+        String sql = " select*from user where userName=? ";
 
         try {
 
@@ -42,7 +42,7 @@ public class NewsDaoImpl implements com.cslg.lrp.dao.NewsDao {
             e.printStackTrace();
             return false;
         } finally {
-            com.cslg.lrp.dao.JDBCUtil.release(con, ps, rs);
+            JDBCUtil.release(con, ps, rs);
         }
     }
     @Override
@@ -52,8 +52,8 @@ public class NewsDaoImpl implements com.cslg.lrp.dao.NewsDao {
         CipherProcessing processing = new CipherProcessing();
         try {
             String newpassword = processing.encoderByMd5(password);
-            con = com.cslg.lrp.dao.JDBCUtil.getConnection();
-            String sql = "select * from users where `id` =? and `password` =?";
+            con = JDBCUtil.getConnection();
+            String sql = "select * from user where `userId` =? and `userPassword` =?";
             ps = con.prepareStatement(sql);
             ps.setString(1,id);
             ps.setString(2,newpassword);
@@ -75,13 +75,13 @@ public class NewsDaoImpl implements com.cslg.lrp.dao.NewsDao {
             e.printStackTrace();
             return false;
         }finally {
-            com.cslg.lrp.dao.JDBCUtil.release(con, ps, rs);
+            JDBCUtil.release(con, ps, rs);
         }
     }
 
     @Override
     public boolean add(User users) {
-        con= com.cslg.lrp.dao.JDBCUtil.getConnection();
+        con= JDBCUtil.getConnection();
         String sql=" insert into user(userID,userName,userSex,userGrade,userDept,userTech,userSingle,userPassword) values(?,?,?,?,?,?,?,?,?) ";
         try {
             ps=con.prepareStatement(sql);
