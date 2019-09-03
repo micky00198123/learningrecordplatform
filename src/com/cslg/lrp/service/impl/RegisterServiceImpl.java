@@ -1,6 +1,6 @@
 package com.cslg.lrp.service.impl;
 
-import com.cslg.lrp.dao.NewsDaoImpl;
+import com.cslg.lrp.Dao.NewsDaoImpl;
 import com.cslg.lrp.domain.User;
 import com.cslg.lrp.service.RegisterService;
 
