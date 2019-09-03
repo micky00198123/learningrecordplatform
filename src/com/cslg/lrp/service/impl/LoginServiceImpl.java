@@ -12,6 +12,7 @@ public class LoginServiceImpl implements LoginService {
 
     private NewsDaoImpl nd = new NewsDaoImpl();
 
+
     @Override
     public boolean loginAccount(LoginData ld) {
 
