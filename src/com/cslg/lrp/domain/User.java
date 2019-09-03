@@ -2,23 +2,25 @@ package com.cslg.lrp.domain;
 
 public class User {
 
-    private int userId;
+    private String userId;
     private String userName;
     private String userSex;
     private int userGrade;
     private String userDept;
     private String userTech;
     private String userSingle;
-    private String userNum;
+/**
+    * private String userNum;
+ */
     private String userPassword;
 
     //以上为用户序号、用户名、用户性别、年级、部门、技术、是否单身、学号（账号）、密码
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
@@ -69,15 +71,15 @@ public class User {
     public void setUserSingle(String userSingle) {
         this.userSingle = userSingle;
     }
-
-    public String getUserNum() {
-        return userNum;
-    }
-
-    public void setUserNum(String userNum) {
-        this.userNum = userNum;
-    }
-
+/**
+  *  public String getUserNum() {
+   *     return userNum;
+   * }
+*
+ *   public void setUserNum(String userNum) {
+  *      this.userNum = userNum;
+   * }
+*/
     public String getUserPassword() {
         return userPassword;
     }
