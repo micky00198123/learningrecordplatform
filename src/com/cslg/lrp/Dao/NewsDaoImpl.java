@@ -89,7 +89,7 @@ public class NewsDaoImpl implements NewsDao {
             ps.setString(2, users.getUserName());
             ps.setString(3, users.getUserSex());
             ps.setInt(4,  users.getUserGrade());
-            ps.setString(5, users.getUserDept());
+//            ps.setString(5, users.getUserDept());
             ps.setString(6, users.getUserTech());
             ps.setString(7, users.getUserSingle());
             ps.setString(8, users.getUserPassword());

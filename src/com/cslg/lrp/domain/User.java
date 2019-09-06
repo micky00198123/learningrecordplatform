@@ -1,20 +1,25 @@
 package com.cslg.lrp.domain;
 
+
+/**
+ * 封装用户个人信息：学号（账号）、用户名、用户性别、年级、技术、是否单身
+ * 登陆信息（密码）在LoginData
+ * 所在部门在IdMatch
+ */
 public class User {
 
     private String userId;
     private String userName;
     private String userSex;
     private int userGrade;
-    private String userDept;
+//    private String userDept;
     private String userTech;
     private String userSingle;
 /**
     * private String userNum;
  */
-    private String userPassword;
+//    private String userPassword;
 
-    //以上为用户序号、用户名、用户性别、年级、部门、技术、是否单身、学号（账号）、密码
 
     public String getUserId() {
         return userId;
@@ -48,13 +53,13 @@ public class User {
         this.userGrade = userGrade;
     }
 
-    public String getUserDept() {
-        return userDept;
-    }
-
-    public void setUserDept(String userDept) {
-        this.userDept = userDept;
-    }
+//    public String getUserDept() {
+//        return userDept;
+//    }
+//
+//    public void setUserDept(String userDept) {
+//        this.userDept = userDept;
+//    }
 
     public String getUserTech() {
         return userTech;
@@ -80,13 +85,13 @@ public class User {
   *      this.userNum = userNum;
    * }
 */
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
+//    public String getUserPassword() {
+//        return userPassword;
+//    }
+//
+//    public void setUserPassword(String userPassword) {
+//        this.userPassword = userPassword;
+//    }
 
 
 
