@@ -4,17 +4,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
-import java.util.logging.Logger;
 
 public class JDBCUtil {
     private static String driver;
     private static String url;
     private static String username;
     private static String password;
-    private static final Logger logger = Logger.getLogger(String.valueOf(JDBCUtil.class));
     static {
         ClassLoader classLoader = JDBCUtil.class.getClassLoader();
-        InputStream resourceAsStream = classLoader.getResourceAsStream("db.properties");
+        InputStream resourceAsStream = classLoader.getResourceAsStream("jdbc.properties");
         Properties properties = new Properties();
         try {
             properties.load(resourceAsStream);
