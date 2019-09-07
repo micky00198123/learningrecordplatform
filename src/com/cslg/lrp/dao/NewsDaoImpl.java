@@ -80,7 +80,7 @@ public class NewsDaoImpl implements NewsDao {
     }
 
     @Override
-    public boolean add(User users) {
+    public boolean add(User users,LoginData user) {
         con= JDBCUtil.getConnection();
         String sql=" insert into user(userID,userName,userSex,userGrade,userDept,userTech,userSingle,userPassword) values(?,?,?,?,?,?,?,?,?) ";
         try {
@@ -92,7 +92,7 @@ public class NewsDaoImpl implements NewsDao {
 //            ps.setString(5, users.getUserDept());
             ps.setString(6, users.getUserTech());
             ps.setString(7, users.getUserSingle());
-            ps.setString(8, users.getUserPassword());
+            ps.setString(8, user.getPassword());
             int ud=ps.executeUpdate();
             if(ud>0) {
                 return true;
