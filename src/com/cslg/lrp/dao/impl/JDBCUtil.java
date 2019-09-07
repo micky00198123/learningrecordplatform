@@ -1,14 +1,14 @@
-package com.cslg.lrp.dao;
+package com.cslg.lrp.dao.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
-import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class JDBCUtil {
     private static String driver;
+    private static String url;
     private static String username;
     private static String password;
     private static final Logger logger = Logger.getLogger(String.valueOf(JDBCUtil.class));
@@ -22,7 +22,7 @@ public class JDBCUtil {
             e.printStackTrace();
         }
         driver = properties.getProperty("driver");
-        String url = properties.getProperty("url");
+        url = properties.getProperty("url");
         username = properties.getProperty("username");
         password = properties.getProperty("password");
 
@@ -30,7 +30,6 @@ public class JDBCUtil {
     public static Connection getConnection()  {
         //Driver driver;
         Connection connection=null;
-        String url="jdbc:mysql://localhost:3306/user";
         try {
             Class.forName(driver);
             connection= DriverManager.getConnection(url, username, password);

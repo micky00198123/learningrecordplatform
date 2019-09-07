@@ -1,6 +1,7 @@
 package com.cslg.lrp.service.impl;
 
-import com.cslg.lrp.dao.NewsDaoImpl;
+import com.cslg.lrp.dao.impl.NewsDaoImpl;
+import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.domain.User;
 import com.cslg.lrp.service.RegisterService;
 
@@ -20,10 +21,10 @@ public class RegisterServiceImpl implements RegisterService {
     }
 
     @Override
-    public boolean registerAccount(User user) {
+    public boolean registerAccount(User user, LoginData ld) {
         if(user == null) {
             return false;
         }
-        return nd.add(user);
+        return nd.add(user, ld);
     }
 }

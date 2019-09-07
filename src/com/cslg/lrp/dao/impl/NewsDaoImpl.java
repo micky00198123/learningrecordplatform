@@ -1,11 +1,9 @@
-package com.cslg.lrp.dao;
+package com.cslg.lrp.dao.impl;
 
+import com.cslg.lrp.dao.NewsDao;
 import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.domain.User;
-import com.cslg.lrp.util.CipherProcessing;
 
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,14 +47,12 @@ public class NewsDaoImpl implements NewsDao {
     public boolean getOldsTitle(LoginData user1) {
         String id=user1.getUserId();
         String password=user1.getPassword();
-        CipherProcessing processing = new CipherProcessing();
         try {
-            String newpassword = processing.encoderByMd5(password);
             con = JDBCUtil.getConnection();
             String sql = "select * from user where `userId` =? and `userPassword` =?";
             ps = con.prepareStatement(sql);
             ps.setString(1,id);
-            ps.setString(2,newpassword);
+            ps.setString(2,password);
             rs = ps.executeQuery();
             if(rs.next()) {
                 System.out.println("登录成功");
@@ -65,12 +61,6 @@ public class NewsDaoImpl implements NewsDao {
                 System.out.println("登录失败");
                 return false;
             }
-        }catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return false;
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-            return false;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -89,7 +79,6 @@ public class NewsDaoImpl implements NewsDao {
             ps.setString(2, users.getUserName());
             ps.setString(3, users.getUserSex());
             ps.setInt(4,  users.getUserGrade());
-//            ps.setString(5, users.getUserDept());
             ps.setString(6, users.getUserTech());
             ps.setString(7, users.getUserSingle());
             ps.setString(8, user.getPassword());

@@ -1,5 +1,6 @@
 package com.cslg.lrp.service;
 
+import com.cslg.lrp.domain.LoginData;
 import com.cslg.lrp.domain.User;
 
 /**
@@ -17,8 +18,9 @@ public interface RegisterService {
     /**
      * 注册用户
      * @param user 用户个人信息模型
+     * @param ld 用户账号密码模型
      * @return 是否注册成功
      */
-    public boolean registerAccount(User user);
+    public boolean registerAccount(User user, LoginData ld);
 
 }
