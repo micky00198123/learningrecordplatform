@@ -22,12 +22,14 @@ public interface NewsDao {
      * @return 是否登录成功
      */
     public boolean getOldsTitle(LoginData user);
+
     /**
-     * 注册
-     *  @param user
-     * @return 是否添加成功
+     * 是否注册成功
+     * @param users
+     * @param user
+     * @return 是否注册成功
      */
-    boolean add(User user);
+    boolean add(User users,LoginData user);
     /**
      * 删除
      * @param user
