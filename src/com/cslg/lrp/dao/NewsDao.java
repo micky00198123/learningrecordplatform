@@ -5,12 +5,6 @@ import com.cslg.lrp.domain.User;
 
 public interface NewsDao {
     /**
-     * 查询列表
-     * @return 列表
-     * emmm
-     */
-    public void getList();
-    /**
      * 查看重名
      * @param id
      * @return 该用户名是否存在
@@ -30,16 +24,4 @@ public interface NewsDao {
      * @return 是否注册成功
      */
     boolean add(User users,LoginData user);
-    /**
-     * 删除
-     * @param user
-     * @return 是否删除成功
-     */
-    boolean delete(User user);
-    /**
-     * 修改
-     * @param user
-     * @return 是否删除成功
-     */
-    boolean update(User user);
 }

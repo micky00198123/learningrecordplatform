@@ -17,12 +17,7 @@ public class NewsDaoImpl implements NewsDao {
     PreparedStatement ps = null;
     ResultSet rs = null;
     @Override
-    public void getList() {
-
-    }
-    @Override
     public boolean getNewsTitle(String id) {
-
         con = JDBCUtil.getConnection();
         String sql = " select*from user where userName=? ";
 
@@ -72,16 +67,15 @@ public class NewsDaoImpl implements NewsDao {
     @Override
     public boolean add(User users,LoginData user) {
         con= JDBCUtil.getConnection();
-        String sql=" insert into user(userID,userName,userSex,userGrade,userDept,userTech,userSingle,userPassword) values(?,?,?,?,?,?,?,?,?) ";
+        String sql=" insert into user(userId,userName,userSex,userGrade,userTech,userSingle) values(?,?,?,?,?,?) ";
         try {
             ps=con.prepareStatement(sql);
             ps.setString(1, users.getUserId());
             ps.setString(2, users.getUserName());
             ps.setString(3, users.getUserSex());
             ps.setInt(4,  users.getUserGrade());
-            ps.setString(6, users.getUserTech());
-            ps.setString(7, users.getUserSingle());
-            ps.setString(8, user.getPassword());
+            ps.setString(5, users.getUserTech());
+            ps.setString(6, users.getUserSingle());
             int ud=ps.executeUpdate();
             if(ud>0) {
                 return true;
@@ -99,16 +93,5 @@ public class NewsDaoImpl implements NewsDao {
                 e.printStackTrace();
             }
         }
-    }
-
-
-    @Override
-    public boolean delete(User users) {
-        return false;
-    }
-
-    @Override
-    public boolean update(User users) {
-        return false;
     }
 }
